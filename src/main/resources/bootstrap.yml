@@ -4,14 +4,15 @@ spring:
 
   cloud:
     consul:
+      enabled: true
       host: 192.168.10.102
       port: 8500
-    config:
-      format: PROPERTIES
-      data-key: data
-      fail-fast: false
       discovery:
         instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.value}
         healthCheckPath: /actuator/health
         health-check-critical-timeout: 1m
         prefer-ip-address: true
+
+    loadbalancer:
+      ribbon:
+        enabled: false
