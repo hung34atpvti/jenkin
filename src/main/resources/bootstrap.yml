@@ -12,7 +12,7 @@ spring:
         data-key: data
         fail-fast: false
       discovery:
-        instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.value}
+        instance-id: ${spring.application.name}:${random.value}
         healthCheckPath: /actuator/health
         health-check-critical-timeout: 1m
         prefer-ip-address: true
